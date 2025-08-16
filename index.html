@@ -9,6 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background-color: #000; color: #fff; font-family: 'Roboto', sans-serif; line-height: 1.4; }
     header { text-align: center; padding: 2rem 0; }
+    header img { max-width: 200px; margin-bottom: 1rem; }
     header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; letter-spacing: 4px; text-transform: uppercase; }
     main { max-width: 1200px; margin: 0 auto; padding: 1rem; }
     .category { margin-bottom: 3rem; }
@@ -25,6 +26,33 @@
   </style>
 </head>
 <body>
+  <script>
+    const imgUrls = {
+      logo: 'images/logo.png',
+      jack: 'images/jack.jpg',
+      absolut: 'images/absolut.jpg',
+      absolutCoca: 'images/absolut-coca.jpg',
+      jackCoca: 'images/jack-coca.jpg',
+      absolutEnergy: 'images/absolut-energy.jpg',
+      jackEnergy: 'images/jack-energy.jpg',
+      corona: 'images/corona.jpg',
+      stella: 'images/stella.jpg',
+      heineken: 'images/heineken.jpg',
+      antartica: 'images/antartica.jpg',
+      coca250: 'images/coca-250.jpg',
+      coca350: 'images/coca-350.jpg',
+      guarana: 'images/guarana.jpg',
+      kapo: 'images/kapo.jpg',
+      redbull: 'images/redbull.jpg'
+    };
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('[data-img]').forEach(el => {
+        const key = el.getAttribute('data-img');
+        if (imgUrls[key]) el.src = imgUrls[key];
+      });
+    });
+  </script>
+
   <header>
     <h1>Bebidas</h1>
   </header>
